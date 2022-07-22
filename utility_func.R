@@ -408,16 +408,3 @@ predict_gbm = function(gbm_mod, set,
   return(preds)
 }
 
-
-#Trial to calibrate Random Forest: (Not published)
-# Code by Zoe
-dev_summary <- function(data, lev = NULL, model = NULL) {
-  low_prob <- 0.000001
-  high_prob <- 0.999999
-  is_class1 <- ifelse(data$obs == lev[1], 1, 0)
-  prob_class1 <- data[, lev[1]]
-  prob_class1[prob_class1==0] <- low_prob
-  prob_class1[prob_class1==1] <- high_prob
-  c(deviance = -2*sum(is_class1*log(prob_class1) + ((1-is_class1)*log(1-prob_class1))), twoClassSummary(data, lev = lev))}
-
-
