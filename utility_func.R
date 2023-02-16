@@ -67,7 +67,7 @@ extract_semparams = function(parTable_df){
       rhs = df[row, 'rhs']
       lhs = df[row, 'lhs']
       op = df[row, 'op']
-      param = df[row, 'est']  #Take the mean of all fits  --->>13/4/21 changed to est instead of 'Mean' because I am currently not working with mean imputations
+      param = df[row, 'est'] 
       
       if(row==1){
         if(op=='~'){
